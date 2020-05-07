@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de operario:.
+    </ui:define>
+    
+    <ui:define name="titleCont">
+		<span></span>
+	</ui:define>
+
+
+	<ui:define name="content">
+		<h:form>
+			<div class="page-breadcrumb">
+				<div class="row">
+					<div class="col-7 align-self-left">
+						<h4 id="sec0" class="page-title">
+							<ui:insert name="titleCont">Registro de Operarios</ui:insert>
+						</h4>
+					</div>
+				</div>
+			</div>
+			<br />
+			<h:outputLabel for="idOperario" value="Id "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idOperario"
+				styleClass="form-control"
+				value="#{operarioController.operario.idOperario}" required="true" disabled="true" />
+
+			<!--Nombre de Operario-->
+			<h:outputLabel for="nombreOperario" value="Nombres "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nombreOperario"
+				styleClass="form-control"
+				value="#{operarioController.operario.nombreOperario}" maxlength="30"
+				required="true" />
+
+			<!--Apellidos de Operario-->
+			<h:outputLabel for="apellidosOperario" value="Apellidos "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="apellidosOperario"
+				styleClass="form-control"
+				value="#{operarioController.operario.apellidosOperario}"
+				maxlength="30" required="true" />
+
+			<h:outputLabel for="telefonoOperario" value="Telefono: "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="telefonoOperario"
+				styleClass="form-control"
+				value="#{operarioController.operario.telefonoOperario}"
+				maxlength="9" required="true" />
+
+			<h:outputLabel for="dniOperario" value="DNI "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="dniOperario"
+				styleClass="form-control"
+				value="#{operarioController.operario.dniOperario}" maxlength="8"
+				required="true" />
+
+			<h:outputLabel for="placaOperario" value="Placa "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="placaOperario"
+				styleClass="form-control"
+				value="#{operarioController.operario.placaOperario}" maxlength="6"
+				required="true" />
+			<br />
+			<p:outputLabel for="cboGerente" value="Gerente"></p:outputLabel>
+			<p:selectOneMenu id="cboGerente"
+				value="#{operarioController.operario.gerente}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{operarioController.listGerentes}" var="tp"
+					itemLabel="#{tp.nombreGerente}" itemValue="#{tp}" />
+			</p:selectOneMenu>
+
+			<p:outputLabel for="cboTipoOperario" value="Tipo Operario"></p:outputLabel>
+			<p:selectOneMenu id="cboTipoOperario"
+				value="#{operarioController.operario.tipooperario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{operarioController.listTipoOperarios}"
+					var="tto" itemLabel="#{tto.nombreTipoOperario}" itemValue="#{tto}" />
+			</p:selectOneMenu>
+
+			<p:outputLabel for="cboSede" value="Sede"></p:outputLabel>
+			<p:selectOneMenu id="cboSede"
+				value="#{operarioController.operario.sede}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{operarioController.listSedes}" var="tp"
+					itemLabel="#{tp.nombreSede}" itemValue="#{tp}" />
+			</p:selectOneMenu>
+
+
+
+			<br />
+			<br />
+
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{operarioController.insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listOperario?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listOperario?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

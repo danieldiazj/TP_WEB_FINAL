@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="utf-8"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<title><ui:insert name="title"></ui:insert></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<meta name="description" content=""></meta>
+	<meta name="author" content=""></meta>
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="resources/assets/images/favicon.png"></link>
+	<link href="resources/assets/libs/chartist/dist/chartist.min.css"
+		rel="stylesheet"></link>
+	<link href="resources/dist/css/style.min.css" rel="stylesheet"></link>
+
+	<h:outputStylesheet
+		name="resources/assets/libs/chartist/dist/chartist.min.css" />
+	<h:outputStylesheet name="resources/dist/css/style.min.css" />
+	<!-- ============================================================== -->
+	<!-- All Jquery -->
+	<!-- ============================================================== -->
+	<script src="resources/assets/libs/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap tether Core JavaScript -->
+	<script src="resources/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+	<script src="resources/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- slimscrollbar scrollbar JavaScript -->
+	<script src="resources/assets/extra-libs/sparkline/sparkline.js"></script>
+	<!--Wave Effects -->
+	<script src="resources/dist/js/waves.js"></script>
+	<!--Menu sidebar -->
+	<script src="resources/dist/js/sidebarmenu.js"></script>
+	<!--Custom JavaScript -->
+	<script src="resources/dist/js/custom.min.js"></script>
+	<!--This page JavaScript -->
+	<!--chartis chart-->
+	<script src="resources/assets/libs/chartist/dist/chartist.min.js"></script>
+	<script
+		src="resources/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+	<script src="resources/dist/js/pages/dashboards/dashboard1.js"></script>
+
+	<h:outputScript name="resources/assets/libs/jquery/dist/jquery.min.js"></h:outputScript>
+	<h:outputScript
+		name="resources/assets/libs/popper.js/dist/umd/popper.min.js"></h:outputScript>
+	<h:outputScript
+		name="resources/assets/libs/bootstrap/dist/js/bootstrap.min.js"></h:outputScript>
+	<h:outputScript
+		name="resources/assets/extra-libs/sparkline/sparkline.js"></h:outputScript>
+	<h:outputScript name="resources/dist/js/waves.js"></h:outputScript>
+	<h:outputScript name="resources/dist/js/sidebarmenu.js"></h:outputScript>
+	<h:outputScript name="resources/dist/js/custom.min.js"></h:outputScript>
+	<h:outputScript
+		name="resources/assets/libs/chartist/dist/chartist.min.js"></h:outputScript>
+	<h:outputScript
+		name="resources/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></h:outputScript>
+	<h:outputScript name="resources/dist/js/pages/dashboards/dashboard1.js"></h:outputScript>
+
+	<ui:insert name="headCont"></ui:insert>
+</h:head>
+
+<h:body>
+	<!-- ============================================================== -->
+	<!-- Preloader - style you can find in spinners.css -->
+	<!-- ============================================================== -->
+	<div class="preloader">
+		<div class="lds-ripple">
+			<div class="lds-pos"></div>
+			<div class="lds-pos"></div>
+		</div>
+	</div>
+	<!-- ============================================================== -->
+	<!-- Main wrapper - style you can find in pages.scss -->
+	<!-- ============================================================== -->
+	<div id="main-wrapper" data-navbarbg="skin6" data-theme="light"
+		data-layout="vertical" data-sidebartype="full"
+		data-boxed-layout="full">
+		<!-- ============================================================== -->
+		<!-- Topbar header - style you can find in pages.scss -->
+		<!-- ============================================================== -->
+		<header class="topbar" data-navbarbg="skin6"
+			style="background-color: #000">
+			<nav class="navbar top-navbar navbar-expand-md navbar-light">
+				<div class="navbar-header" data-logobg="skin5">
+					<!-- This is for the sidebar toggle which is visible on mobile only -->
+					<a class="nav-toggler waves-effect waves-light d-block d-md-none"
+						href="javascript:void(0)"> <i class="ti-menu ti-close"></i>
+					</a>
+					<!-- ============================================================== -->
+					<!-- Logo -->
+					<!-- ============================================================== -->
+					<div class="navbar-brand" style="background-color: #000">
+						<a href="panel.xhtml" class="logo"> <!-- Logo icon --> <b
+							class="logo-icon"> <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+								<!-- Dark Logo icon --> <img
+								src="resources/assets/images/aceros.png" alt="homepage"
+								class="dark-logo"></img> <!-- Light Logo icon --> <img
+								src="resources/assets/images/aceros.png" alt="homepage"
+								class="light-logo" height="100%" width="100%"></img>
+						</b> <!--End Logo icon --> <!-- Logo text -->
+						</a>
+					</div>
+					<!-- ============================================================== -->
+					<!-- End Logo -->
+					<!-- ============================================================== -->
+					<!-- ============================================================== -->
+					<!-- Toggle which is visible on mobile only -->
+					<!-- ============================================================== -->
+					<a class="topbartoggler d-block d-md-none waves-effect waves-light"
+						href="javascript:void(0)" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation"> <i class="ti-more"></i>
+					</a>
+				</div>
+				<!-- ============================================================== -->
+				<!-- End Logo -->
+				<!-- ============================================================== -->
+				<div class="navbar-collapse collapse" id="navbarSupportedContent"
+					data-navbarbg="skin6">
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav float-left mr-auto">
+						<!-- ============================================================== -->
+						<!-- Search -->
+						<!-- ============================================================== -->
+						<!-- <li class="nav-item search-box"><a
+							class="nav-link waves-effect waves-dark"
+							href="javascript:void(0)">
+								<div class="d-flex align-items-center">
+									<i class="mdi mdi-magnify font-20 mr-1"></i>
+									<div class="ml-1 d-none d-sm-block">
+										<span>Search</span>
+									</div>
+								</div>
+						</a>
+							<form class="app-search position-absolute">
+								<input type="text" class="form-control"
+									placeholder="Search &amp; enter"></input><a class="srh-btn">
+									<i class="ti-close"></i>
+								</a>
+							</form></li> -->
+					</ul>
+					<!-- ============================================================== -->
+					<!-- Right side toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav float-right">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
+							href="" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"><img
+								src="resources/assets/images/users/admin.jpeg" alt="user"
+								class="rounded-circle" width="31"></img></a>
+							<div class="dropdown-menu dropdown-menu-right user-dd animated">
+								<a class="dropdown-item" href="javascript:void(0)"><i
+									class="ti-user m-r-5 m-l-5"></i> My Profile</a> <a
+									class="dropdown-item" href="javascript:void(0)"><i
+									class="ti-wallet m-r-5 m-l-5"></i> My Balance</a> <a
+									class="dropdown-item" href="javascript:void(0)"><i
+									class="ti-email m-r-5 m-l-5"></i> Inbox</a><a class="dropdown-item"
+									href="login.xhtml"><i class="m-r-10 mdi mdi-export"></i>
+									Cerrar Sesión</a>
+							</div></li>
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!-- ============================================================== -->
+		<!-- End Topbar header -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<aside class="left-sidebar" data-sidebarbg="skin5"
+			style="background-color: #000">
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav" style="background-color: #000">
+
+
+						<li class="sidebar-item"><a
+							class="sidebar-link waves-effect waves-dark sidebar-link"
+							href="panel.xhtml" aria-expanded="false"> <i
+								class="mdi mdi-av-timer"></i> <span class="hide-menu">Inicio</span>
+						</a></li>
+
+						<li class="sidebar-item"><a
+							class="sidebar-link waves-effect waves-dark sidebar-link"
+							href="listTipoOperario.xhtml" aria-expanded="false"> <i
+								class="mdi mdi-account-network"></i> <span class="hide-menu">
+									Lista tipo Operario</span>
+						</a></li>
+						<li class="sidebar-item"><a
+							class="sidebar-link waves-effect waves-dark sidebar-link"
+							href="listDepartamento.xhtml" aria-expanded="false"> <i
+								class="mdi mdi-arrange-bring-forward"></i> <span
+								class="hide-menu">Lista Departamento</span>
+						</a></li>
+						 <li class="sidebar-item"><a
+							class="sidebar-link waves-effect waves-dark sidebar-link"
+							href="listSede.xhtml" aria-expanded="false"> <i
+								class="mdi mdi-border-none"></i> <span class="hide-menu">Lista
+									Sede</span>
+						</a></li>  
+						 <li class="sidebar-item"><a
+							class="sidebar-link waves-effect waves-dark sidebar-link"
+							href="listGerente.xhtml" aria-expanded="false"> <i
+								class="mdi mdi-face"></i> <span class="hide-menu">Lista
+									Gerente</span>
+						</a></li> 
+						<li class="sidebar-item"><a
+							class="sidebar-link waves-effect waves-dark sidebar-link"
+							href="listTipoInforme.xhtml" aria-expanded="false"> <i
+								class="mdi mdi-file"></i> <span class="hide-menu">Lista
+									tipo Informe</span>
+						</a></li>
+						<li class="sidebar-item"><a
+							class="sidebar-link waves-effect waves-dark sidebar-link"
+							href="listOperario.xhtml" aria-expanded="false"> <i
+								class="mdi mdi-alert-outline"></i> <span class="hide-menu">Lista
+									Operario</span>
+						</a></li>
+						<li class="sidebar-item"><a
+							class="sidebar-link waves-effect waves-dark sidebar-link"
+							href="listInforme.xhtml" aria-expanded="false"> <i
+								class="mdi mdi-alert-outline"></i> <span class="hide-menu">Lista
+									Informe</span>
+						</a></li>
+					</ul>
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<!-- End Sidebar scroll-->
+		</aside>
+		<!-- ============================================================== -->
+		<!-- End Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Page wrapper  -->
+		<!-- ============================================================== -->
+		<div class="page-wrapper">
+			<div class="container-fluid">
+				<ui:insert name="content">
+				</ui:insert>
+			</div>
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Page wrapper  -->
+		<!-- ============================================================== -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Wrapper -->
+	<!-- ============================================================== -->
+
+	<ui:insert name="footerCont"></ui:insert>
+</h:body>
+
+</html>

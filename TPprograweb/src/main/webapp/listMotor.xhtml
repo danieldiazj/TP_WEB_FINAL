@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="index.xhtml">
+	<ui:define name="title">
+        .:Listado de Operarios:.
+    </ui:define>
+	<ui:define name="titleCont">
+		<span>Operarios </span>
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<div class="row" align="center">
+				<p:commandButton value="Nuevo"
+					action="#{operarioController.newOperario()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="lstOperario" var="ope"
+							value="#{operarioController.listOperarios}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{ope.idOperario}">
+								<h:outputText value="#{ope.idOperario}" />
+							</p:column>
+
+							<p:column headerText="Nombre" sortBy="#{ope.nombreOperario}">
+								<h:outputText value="#{ope.nombreOperario}" />
+							</p:column>
+							<p:column headerText="Apellidos"
+								sortBy="#{ope.apellidosOperario}">
+								<h:outputText value="#{ope.apellidosOperario}" />
+							</p:column>
+							<!--<p:column headerText="Telefono" sortBy="#{ope.telefonoOperario}">
+								<h:outputText value="#{ope.telefonoOperario}" />
+							</p:column>
+							<p:column headerText="DNI" sortBy="#{ope.dniOperario}">
+								<h:outputText value="#{ope.dniOperario}" />
+							</p:column>-->
+							<p:column headerText="Placa" sortBy="#{ope.placaOperario}">
+								<h:outputText value="#{ope.placaOperario}" />
+							</p:column>
+							<p:column headerText="Gerente" sortBy="#{ope.gerente}">
+								<h:outputText value="#{ope.gerente}" />
+							</p:column>
+							<p:column headerText="Tipo Operario" sortBy="#{ope.tipooperario}">
+								<h:outputText value="#{ope.tipooperario}" />
+							</p:column>
+							<p:column headerText="Sede" sortBy="#{ope.sede}">
+								<h:outputText value="#{ope.sede}" />
+							</p:column>
+						</p:dataTable>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+	<ui:define name="footerCont">
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="index.xhtml">
+	<ui:define name="title">
+        .:Listado de Tipos Informe:.
+    </ui:define>
+	<ui:define name="titleCont">
+		<span>Tipo informe </span>
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<div class="page-breadcrumb">
+				<div class="row">
+					<div class="col-7 align-self-left">
+						<h4 id="sec0" class="page-title">
+							<ui:insert name="titleCont">Lista de Tipo Informe</ui:insert>
+						</h4>
+					</div>
+				</div>
+			</div>
+			<br />
+			<p:commandButton value="Nuevo"
+				action="#{tipoInformeController.nuevoTipoInforme()}"
+				styleClass="btn btn-primary" style="margin-left:47%" ajax="false" />
+			<br></br>
+			<br></br>
+			<br></br>
+			<div class="row">
+				<div class="col-xl-8">
+					<div class="table-responsive" style="margin-left: 25%">
+						<p:dataTable id="lstTipoInforme" var="tpi"
+							value="#{tipoInformeController.listaTipoInforme}"
+							paginator="true" paginatorPosition="top"
+							rowsPerPageTemplate="10,20,30,40,50" rows="10"
+							styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{tpi.idTipoInforme}">
+								<h:outputText value="#{tpi.idTipoInforme}" />
+							</p:column>
+
+							<p:column headerText="Nombre" sortBy="#{tpi.nombreTipoInforme}">
+								<h:outputText value="#{tpi.nombreTipoInforme}" />
+							</p:column>
+
+							<p:column headerText="Descripcion"
+								sortBy="#{tpi.descripcionTipoInforme}">
+								<h:outputText value="#{tpi.descripcionTipoInforme}" />
+							</p:column>
+
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listTipoInforme" value="Eliminar"
+									actionListener="#{tipoInformeController.eliminar(tpi)}" />
+							</p:column>
+
+
+						</p:dataTable>
+					</div>
+
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,289 @@
+<ui:composition template="index.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="title">
+        Inicio
+    </ui:define>
+
+
+	<ui:define name="content">
+
+		<!-- ============================================================== -->
+		<!-- Bread crumb and right sidebar toggle -->
+		<!-- ============================================================== -->
+		<div class="page-breadcrumb">
+			<div class="row">
+				<div class="col-7 align-self-left">
+					<h4 id="sec0" class="page-title">
+						<ui:insert name="titleCont">Inicio</ui:insert>
+					</h4>
+				</div>
+			</div>
+		</div>
+		<br />
+		<!-- ============================================================== -->
+		<!-- End Bread crumb and right sidebar toggle -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Email campaign chart -->
+		<!-- ============================================================== -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Noticias</h4>
+						<div class="card">
+							<div class="d-flex flex-row comment-row m-t-0">
+								<div class="p-2">
+									<img
+										src="http://www.acerosarequipa.com/uploads/pics/Aceros_Arequipa_implementos_hospital_san_juan_de_dios.jpg"
+										alt="user"></img>
+								</div>
+								<div class="comment-text w-100">
+									<h6 class="font-medium">ACEROS AREQUIPA DONA IMPLEMENTOS
+										DE BIOSEGURIDAD AL HOSPITAL SAN JUAN DE DIOS DE PISCO</h6>
+									<span class="m-b-15 d-block">En el marco de la
+										emergencia sanitaria a causa del Covid-19, y ante la urgencia
+										del Hospital San Juan de Dios de Pisco por continuar
+										atendiendo a la población con los máximos estándares de
+										seguridad, Corporación Aceros Arequipa (CAASA) hizo entrega de
+										más 3,200 implementos médicos en favor del personal de este
+										nosocomio.</span>
+									<div class="comment-footer">
+										<span class="text-muted float-right">Abril 24, 2020</span> <span
+											class="action-icons"> <a href="javascript:void(0)">
+												<i class="ti-pencil-alt"></i>
+										</a> <a href="javascript:void(0)"> <i class="ti-check"></i>
+										</a> <a href="javascript:void(0)"> <i class="ti-heart"></i>
+										</a>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex flex-row comment-row m-t-0">
+								<div class="p-2">
+									<img
+										src="http://www.acerosarequipa.com/uploads/pics/MINIATURA_ACEROS.jpg"
+										alt="user"></img>
+								</div>
+								<div class="comment-text w-100">
+									<h6 class="font-medium">CORPORACIÓN ACEROS AREQUIPA Y
+										SUCAMEC DESTRUIRÁN MÁS DE 10,000 ARMAS ILÍCITAS</h6>
+									<span class="m-b-15 d-block">El 03 de julio Corporación
+										Aceros Arequipa (CAASA) y la Superintendencia Nacional de
+										Control de Servicios de Seguridad, Armas, Municiones y
+										Explosivos de uso Civil (Sucamec), firmaron un convenio para
+										destruir más de 10 mil armas ilícitas incautadas por la
+										entidad pública y la Policía Nacional. </span>
+									<div class="comment-footer">
+										<span class="text-muted float-right">Abril 11, 2020</span> <span
+											class="action-icons"> <a href="javascript:void(0)">
+												<i class="ti-pencil-alt"></i>
+										</a> <a href="javascript:void(0)"> <i class="ti-check"></i>
+										</a> <a href="javascript:void(0)"> <i class="ti-heart"></i>
+										</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br></br>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title m-b-5">Frase del día</h5>
+
+						<div class="m-t-20 text-center">
+							<h2 class="font-light">"El momento que da más miedo es
+								siempre justo antes de empezar."</h2>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title m-b-0">Empleado del mes</h4>
+						<br></br>
+						<div class="d-flex flex-row comment-row m-t-0">
+							<div class="p-2">
+								<img src="resources/assets/images/users/4.jpg" alt="user"
+									width="50" class="rounded-circle"></img>
+							</div>
+							<div class="comment-text w-100">
+								<h6 class="font-medium">Piernita Dominguez</h6>
+								<span class="m-b-15 d-block">Por tener el mayor número de
+									ventas por llamada telefónica en el mes de Marzo</span>
+								<div class="comment-footer">
+									<span class="label label-success label-rounded">¡Felicidades!</span>
+									<span class="action-icons"> </span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ============================================================== -->
+		<!-- Email campaign chart -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Ravenue - page-view-bounce rate -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- Ravenue - page-view-bounce rate -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Recent comment and chats -->
+		<!-- ============================================================== -->
+		<div class="row">
+			<!-- column -->
+			<div class="col-lg-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Eventos</h4>
+					</div>
+					<div class="comment-widgets" style="height: 330px;">
+						<!-- Comment Row -->
+						<div class="d-flex flex-row comment-row m-t-0">
+							<div class="p-2">
+								<img
+									src="https://image.flaticon.com/icons/png/512/483/483606.png"
+									alt="user" width="80"></img>
+							</div>
+							<div class="comment-text w-100">
+								<h6 class="font-medium">Capacitación tecnológica</h6>
+								<span class="m-b-15 d-block">Sala de conferencias A-304 </span>
+								<div class="comment-footer">
+									<span class="text-muted float-right">Día: 16 de Mayo |
+										Hora: 7:00 pm</span> <span class="label label-rounded label-primary">Pendiente</span>
+									<span class="action-icons"> <a href="javascript:void(0)">
+											<i class="ti-pencil-alt"></i>
+									</a> <a href="javascript:void(0)"> <i class="ti-check"></i>
+									</a> <a href="javascript:void(0)"> <i class="ti-heart"></i>
+									</a>
+									</span>
+								</div>
+							</div>
+						</div>
+						<!-- Comment Row -->
+						<div class="d-flex flex-row comment-row m-t-0">
+							<div class="p-2">
+								<img
+									src="http://icon-library.com/images/glass-icon-png/glass-icon-png-4.jpg"
+									alt="user" width="80"></img>
+							</div>
+							<div class="comment-text w-100">
+								<h6 class="font-medium">Cocktail de bienvenida</h6>
+								<span class="m-b-15 d-block">Sala de conferencias A-101 </span>
+								<div class="comment-footer">
+									<span class="text-muted float-right">Día: 06 de Mayo |
+										Hora: 7:00 pm</span> <span class="label label-rounded label-primary">Pendiente</span>
+									<span class="action-icons"> <a href="javascript:void(0)">
+											<i class="ti-pencil-alt"></i>
+									</a> <a href="javascript:void(0)"> <i class="ti-check"></i>
+									</a> <a href="javascript:void(0)"> <i class="ti-heart"></i>
+									</a>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- column -->
+			<div class="col-lg-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Cumpleaños</h4>
+						<div class="d-flex flex-row comment-row m-t-0">
+							<div class="p-3">
+								<img
+									src="resources/images/lucero.jpg"
+									alt="user" width="60" height="60"></img>
+							</div>
+							<div class="comment-text w-110">
+								<h6 class="font-medium">Lucero Huaroto</h6>
+								<span class="m-b-15 d-block">Área de Marketing</span>
+								<div class="comment-footer">
+									<span class="text-muted float-right">Mayo 19, 2020</span> <span
+										class="action-icons"> 
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row comment-row m-t-0">
+							<div class="p-3">
+								<img
+									src="resources/images/daniel.jpeg"
+									alt="user" width="60" height="60"></img>
+							</div>
+							<div class="comment-text w-110">
+								<h6 class="font-medium">Daniel Diaz</h6>
+								<span class="m-b-15 d-block">Área de Contabilidad</span>
+								<div class="comment-footer">
+									<span class="text-muted float-right">Mayo 23, 2020</span> <span
+										class="action-icons"> 
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row comment-row m-t-0">
+							<div class="p-3">
+								<img
+									src="resources/images/pierina.jpeg"
+									alt="user" width="60" height="60"></img>
+							</div>
+							<div class="comment-text w-110">
+								<h6 class="font-medium">Pierina Romero</h6>
+								<span class="m-b-15 d-block">Área de Sistemas</span>
+								<div class="comment-footer">
+									<span class="text-muted float-right">Mayo 27, 2020</span> <span
+										class="action-icons"> 
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row comment-row m-t-0">
+							<div class="p-3">
+								<img
+									src="resources/images/rubi.jpeg"
+									alt="user" width="60" height="60"></img>
+							</div>
+							<div class="comment-text w-110">
+								<h6 class="font-medium">Rubi Romero</h6>
+								<span class="m-b-15 d-block">Mascota del área de Sistemas</span>
+								<div class="comment-footer">
+									<span class="text-muted float-right">Mayo 29, 2020</span> <span
+										class="action-icons"> 
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- ============================================================== -->
+		<!-- Recent comment and chats -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- End Container fluid  -->
+		<!-- ============================================================== -->
+
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>

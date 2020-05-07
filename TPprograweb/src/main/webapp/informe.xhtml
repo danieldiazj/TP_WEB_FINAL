@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Informes:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span></span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<div class="page-breadcrumb">
+				<div class="row">
+					<div class="col-7 align-self-left">
+						<h4 id="sec0" class="page-title">
+							<ui:insert name="titleCont">Registo de Informe</ui:insert>
+						</h4>
+					</div>
+				</div>
+			</div>
+			<br />
+
+
+
+
+			<h:outputLabel for="idInformes" value="Id "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idInformes"
+				styleClass="form-control"
+				value="#{informeController.informe.idInforme}" required="true"
+				disabled="true" />
+			<br></br>
+			<!--FechaInforme-->
+			<h:outputLabel for="fechaInforme" value="Fecha (Dia/Mes/Año)"
+				styleClass="control-label" />
+			<br></br>
+
+			<p:calendar id="fechaInforme" pattern="dd/MM/yyyy"
+				value="#{informeController.informe.fecha_Informe}" showOn="button"
+				timeZone="UTC" required="true">
+			</p:calendar>
+
+			<br />
+
+			<!--Provincia Proceso-->
+			<h:outputLabel for="provinciaProceso" value="Provincia-Proceso"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="provinciaProceso"
+				styleClass="form-control"
+				value="#{informeController.informe.provinciaProceso}" maxlength="90"
+				required="true" />
+
+			<h:outputLabel for="PesoMezclaTotal" value="Peso mezcla total"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="PesoMezclaTotal"
+				styleClass="form-control"
+				value="#{informeController.informe.pesototal_Mezcla}" maxlength="90"
+				required="true" />
+
+
+
+
+			<br />
+			<p:outputLabel for="idOperario" value="Operario"></p:outputLabel>
+			<p:selectOneMenu id="idOperario"
+				value="#{informeController.informe.operario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{informeController.listOperarios}" var="lo"
+					itemLabel="#{lo.nombreOperario}" itemValue="#{lo}" />
+			</p:selectOneMenu>
+
+			<br />
+
+
+			<!--Notas informe-->
+			<h:outputLabel for="notas_Informe" value="Notas Informe"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="notasInforme"
+				styleClass="form-control"
+				value="#{informeController.informe.notasInforme}" maxlength="60"
+				required="true" />
+
+
+			<h:outputLabel for="proporcion_HierroEsponja"
+				value="Proporcion hierro esponja" styleClass="control-label" />
+			<p:inputText autocomplete="off" id="proporcionHierroEsponja"
+				styleClass="form-control"
+				value="#{informeController.informe.proporcion_HierroEsponja}"
+				maxlength="90" required="true" />
+
+			<h:outputLabel for="proporcion_AceroReciclado"
+				value="Proporcion acero reciclado" styleClass="control-label" />
+			<p:inputText autocomplete="off" id="proporcionAceroReciclado"
+				styleClass="form-control"
+				value="#{informeController.informe.proporcion_AceroReciclado}"
+				maxlength="90" required="true" />
+
+			<h:outputLabel for="temperatura_Mezcla" value="Temperatura Mezcla"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="temperaturaMezcla"
+				styleClass="form-control"
+				value="#{informeController.informe.temperatura_Mezcla}"
+				maxlength="90" required="true" />
+
+			<h:outputLabel for="cantidad_BarrasMetalicas"
+				value="Cantidad Barras Metalicas" styleClass="control-label" />
+			<p:inputText autocomplete="off" id="cantidadBarrasMetalicas"
+				styleClass="form-control"
+				value="#{informeController.informe.cantidad_BarrasMetalicas}"
+				maxlength="90" required="true" />
+
+			<h:outputLabel for="dimension_Barras" value="Dimension Barras"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="dimensionBarras"
+				styleClass="form-control"
+				value="#{informeController.informe.dimension_Barras}" maxlength="90"
+				required="true" />
+
+
+
+			<br />
+
+			<br />
+			<p:outputLabel for="idTipoInforme" value="TipoInforme"></p:outputLabel>
+			<p:selectOneMenu id="idTipoInforme"
+				value="#{informeController.informe.tipoinforme}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{informeController.listTipoInformes}"
+					var="lo" itemLabel="#{lo.nombreTipoInforme}" itemValue="#{lo}" />
+			</p:selectOneMenu>
+
+
+
+
+			<br />
+			<br />
+
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{informeController.insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listInforme?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listInforme?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

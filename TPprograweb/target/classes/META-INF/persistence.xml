@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="PostgresDS" transaction-type="JTA">
+		<jta-data-source>java:jboss/datasources/PROYECTOWEBDS</jta-data-source>
+		<class>pe.edu.upc.entity.Gerente</class>
+		<class>pe.edu.upc.entity.Departamento</class>
+		<class>pe.edu.upc.entity.TipoOperario</class>
+		<class>pe.edu.upc.entity.TipoInforme</class>
+		<class>pe.edu.upc.entity.Sede</class>
+		<class>pe.edu.upc.entity.Operario</class>
+		<class>pe.edu.upc.entity.Informe</class>
+		<properties>
+			<property name="javax.persistence.schema-generation.database.action" value="update" />
+
+		</properties>
+	</persistence-unit>
+</persistence>

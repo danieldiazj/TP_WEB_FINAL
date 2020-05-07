@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="index.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Gerentes:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Gerentes</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+		
+		<div class="page-breadcrumb">
+				<div class="row">
+					<div class="col-7 align-self-left">
+						<h4 id="sec0" class="page-title">
+							<ui:insert name="titleCont">Registro de Gerente</ui:insert>
+						</h4>
+					</div>
+				</div>
+			</div>
+		
+		
+
+		
+			<!--ID Gerente-->
+			<h:outputLabel for="idGerente" value="Id " styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idGerente"
+				styleClass="form-control"
+				value="#{gerenteController.gerente.idGerente}" required="true" disabled="true" />
+			<!--Nombre Gerente-->
+			<h:outputLabel for="nombreGerente" value="Nombres "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nombreGerente"
+				styleClass="form-control"
+				value="#{gerenteController.gerente.nombreGerente}" maxlength="30"
+				required="true" />
+			<!--Nombre Gerente-->
+			<h:outputLabel for="apellidosGerente" value="Apellidos"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="apellidosGerente"
+				styleClass="form-control"
+				value="#{gerenteController.gerente.apellidosGerente}" maxlength="30"
+				required="true" />
+
+			<h:outputLabel for="telefonoGerente" value="Telefono"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="telefonoGerente"
+				styleClass="form-control"
+				value="#{gerenteController.gerente.telefonoGerente}" maxlength="9"
+				required="true" />
+
+			<h:outputLabel for="dniGerente" value="DNI"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="dniGerente"
+				styleClass="form-control"
+				value="#{gerenteController.gerente.dniGerente}" maxlength="8"
+				required="true" />
+
+			<br />
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{gerenteController.insertar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listGerente?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listGerente?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

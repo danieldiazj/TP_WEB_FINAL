@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="index.xhtml">
+
+
+	<ui:define name="title">
+        .:Listado de Informes:.
+    </ui:define>
+
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="page-breadcrumb">
+				<div class="row">
+					<div class="col-7 align-self-left">
+						<h4 id="sec0" class="page-title">
+							<ui:insert name="titleCont">Lista de Informes</ui:insert>
+						</h4>
+					</div>
+				</div>
+			</div>
+			<br />
+			<p:commandButton value="Nuevo"
+				action="#{informeController.newInforme()}"
+				styleClass="btn btn-primary" style="margin-left:47%" ajax="false" />
+
+			<br />
+			<br />
+			<br />
+
+			<div class="row">
+				<div class="col-xl-8">
+					<div class="table-responsive" style="margin-left: 25%">
+						<p:dataTable id="lstGer" var="inf"
+							value="#{informeController.listInformes}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{inf.idInforme}">
+								<h:outputText value="#{inf.idInforme}" />
+							</p:column>
+
+							<p:column headerText="Fecha" sortBy="#{inf.fecha_Informe}">
+								<h:outputText value="#{inf.fecha_Informe}" />
+							</p:column>
+
+							<p:column headerText="Operario"
+								sortBy="#{inf.operario.nombreOperario}">
+								<h:outputText value="#{inf.operario.nombreOperario}">
+								</h:outputText>
+							</p:column>
+							
+							<p:column headerText="Tipo de Informe"
+								sortBy="#{inf.tipoinforme.nombreTipoInforme}">
+								<h:outputText value="#{inf.tipoinforme.nombreTipoInforme}">
+								</h:outputText>
+							</p:column>
+							
+
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listInforme" value="Eliminar"
+									actionListener="#{informeController.delete(inf)}" />
+							</p:column>
+
+
+						</p:dataTable>
+					</div>
+
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

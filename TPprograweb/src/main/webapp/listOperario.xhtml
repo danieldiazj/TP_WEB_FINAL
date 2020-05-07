@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="index.xhtml">
+
+
+	<ui:define name="title">
+        .:Listado de Operarios:.
+    </ui:define>
+
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="page-breadcrumb">
+				<div class="row">
+					<div class="col-7 align-self-left">
+						<h4 id="sec0" class="page-title">
+							<ui:insert name="titleCont">Lista de Operarios</ui:insert>
+						</h4>
+					</div>
+				</div>
+			</div>
+			<br />
+			<p:commandButton value="Nuevo"
+				action="#{operarioController.newOperario()}"
+				styleClass="btn btn-primary" style="margin-left:47%" ajax="false" />
+			<br />
+			<br />
+			<br />
+
+			<div class="row">
+				<div class="col-xl-8">
+					<div class="table-responsive" style="margin-left: 25%">
+						<p:dataTable id="lstOper" var="ope"
+							value="#{operarioController.listOperarios}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{ope.idOperario}">
+								<h:outputText value="#{ope.idOperario}" />
+							</p:column>
+
+							<p:column headerText="Nombre" sortBy="#{ope.nombreOperario}">
+								<h:outputText value="#{ope.nombreOperario}" />
+							</p:column>
+
+							<p:column headerText="Sede" sortBy="#{ope.sede.nombreSede}">
+								<h:outputText value="#{ope.sede.nombreSede}" />
+							</p:column>
+							
+							<p:column headerText="Tipo operario" sortBy="#{ope.tipooperario.nombreTipoOperario}">
+								<h:outputText value="#{ope.tipooperario.nombreTipoOperario}" />
+							</p:column>
+
+
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listOperario" value="Eliminar"
+									actionListener="#{operarioController.delete(ope)}" />
+							</p:column>
+
+
+						</p:dataTable>
+					</div>
+
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
